@@ -1,13 +1,11 @@
 function solution(s) {
-    let stackCount = 0;
-    for(let i=0; i<s.length; i++){
-        if (s[i] === "(") {
-            stackCount++;
-        }else {
-            if(stackCount === 0) return false;
-            stackCount--;
+    let count = 0;
+    for (const ch of s) {
+        if (ch === '(') count++;
+        else {
+            if (count === 0) return false;
+            count--;
         }
     }
-    
-    return stackCount === 0
+    return count === 0;
 }
